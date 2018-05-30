@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOiREIj7OlVojdyYlEHSZXG5M28Z5WN64&libraries=drawing&libraries=geometry">
-      </script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:600i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <script
+      src="http://maps.googleapis.com/maps/api/js?&libraries=drawing,geometry&callback=initMap" async defer>
+      </script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
     <title></title>
   </head>
   <h1>
@@ -34,9 +36,28 @@
           <div id="map"></div>
       </div>
       <div class="col-md-6">
-        <font size="7" color="#36BDF4">Analytics</font>
+        <div id="table">
+
+          <table class="striped">
+        <thead>
+          <tr>
+               <th>Best Districts (Affordability)</th>
+             </tr>
+          <tr>
+              <th>Number</th>
+              <th>Borough</th>
+              <th>District</th>
+
+          </tr>
+        </thead>
+        <tbody id="tableHousing">
+
+        </tbody>
+
+
       </div>
     </div>
+
     <div class="row justify-content-center">
       <div class="col-md-auto">
         <a id="getData"class="waves-effect waves-light btn">Get Data A</a>
@@ -48,63 +69,26 @@
       </div>
     </div>
     <div class="row justify-content-center">
-     <div class="col-md-auto">
-       <div id="table" color="#36BDF4">
+      <div class="col-md-6">
+        <div id="table">
 
+          <table class="striped">
+        <thead>
+          <tr>
+               <th>Neighborhood info (for reference)</th>
+             </tr>
+          <tr>
+              <th>Neighborhood Number</th>
+              <th>Neighborhood Name</th>
+              <th>Neighborhood Coordinates</th>
+              <th>Neighborhood District</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
 
-         <table class="striped">
-       <thead>
-         <tr>
-             <th>District</th>
-             <th>Safety</th>
-             <th>Distance</th>
-             <th>Affordability</th>
-         </tr>
-       </thead>
-       <tbody>
-               <tr>
-                 <td>District A</td>
-                 <td>89</td>
-                 <td>96</td>
-                 <td>90</td>
-               </tr>
-               <tr>
-                 <td>District B</td>
-                 <td>81</td>
-                 <td>99</td>
-                 <td>89</td>
-               </tr>
-               <tr>
-                 <td>District C</td>
-                 <td>85</td>
-                 <td>90</td>
-                 <td>78</td>
-               </tr>
-             </tbody>
-             </table>
-             </div>
-     </div>
-     <div class="col-md-auto">
+        </tbody>
+      </div>
 
-       <div id="table">
-
-         <table class="striped">
-       <thead>
-         <tr>
-              <th>Neighborhood info (for reference)</th>
-            </tr>
-         <tr>
-             <th>Neighborhood Number</th>
-             <th>Neighborhood Name</th>
-             <th>Neighborhood Coordinates</th>
-             <th>Neighborhood District</th>
-         </tr>
-       </thead>
-       <tbody id="tableBody">
-
-       </tbody>
-
-   </div>
 
 
     <script
@@ -115,8 +99,9 @@
      <script
       src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Convert-HTML-Table-To-CSV-tabletoCSV/jquery.tabletoCSV.js"></script>
       <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOiREIj7OlVojdyYlEHSZXG5M28Z5WN64&libraries=drawing&callback=initMap">
+        src="http://maps.googleapis.com/maps/api/js?&libraries=drawing,geometry&callback=initMap" async defer>
         </script>
+
 
 
   </body>
